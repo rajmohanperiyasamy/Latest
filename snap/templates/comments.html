@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/static/css/layout-photo.css" type="text/css" />
+      <div id="comments">
+        <h2>Comments</h2>
+        <ul class="commentlist">
+        {%for c in comment%}
+          <li class="comment_odd">
+            <div class="author"><img class="avatar" src="../images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">{{ c.commented_by }}</a></span> <span class="wrote">wrote:</span></div>
+            <div class="submitdate"><a href="#">{{ c.commented_on }}</a></div>
+            <p>{{c.comment}}</p>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <h2>Write A Comment</h2>
+      <div id="respond">
+        <form action="/post-comment/" method="post">{% csrf_token %}
+            <textarea   name="comment" cols="200%" rows="5"></textarea>
+            <input type="hidden" value="{{ article.id }}" name="id_article" id="id_pagentn">
+            <label for="comment" style="display:none;"><small>Comment (required)</small></label>
+          <p>
+            <input name="submit" type="submit"  value="comment" />
+            &nbsp;
+            <input name="reset" type="reset" id="reset" tabindex="5" value="Reset Form" />
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+</body>
+</html>

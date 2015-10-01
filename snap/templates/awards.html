@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- templatemo 413 flip turn -->
+<!-- 
+Flip Turn Template 
+http://www.templatemo.com/preview/templatemo_413_flip_turn
+-->
+{% extends "index.html" %}
+{% block content %}
+		<div class="content-container">
+			<header>
+			<h1 class="center-text">Video Gallery</h1>
+			<h2 class="center-text">Entertainment Videos - get the latest Entertainment Videos from youtube  like weddings, movie launch,pranks, songs etc.</h2>
+		</header>
+		<div id="portfolio-content" class="center-text">
+			<div class="portfolio-page" id="page-1">
+				{%for video in youtube%}
+				<div class="portfolio-group" >
+					<a class="portfolio-item" href="static/images/1-large.jpg">
+						<li><iframe src="http://www.youtube.com/embed/{{ video.url }}? allowfullscreen="" height="250" width="250"></iframe></li>
+					</a>				
+				</div>
+				
+				{% endfor %}
+			</div>
+		</div>
+	</div>	</div> <!-- /.content-container -->	
+	{% endblock %}	
+		<footer>
+			<p>Copyright &copy; 2084 Your Company Name</p>
+			<div class="social right">
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-google-plus"></i></a>
+				<a href="#"><i class="fa fa-dribbble"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+			</div>
+		</footer>
+	</div>	
+</body>
+</html>

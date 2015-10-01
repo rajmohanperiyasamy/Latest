@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block content %}
+
+    
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+
+      <form method="post" action=".">{% csrf_token %}
+      
+        <h1>Sign Up</h1>
+        {% for field in form %}
+        
+  		{{ field.label_tag }} {{ field }}
+        {{ field.errors }}
+        
+         {% endfor %} 
+        <button type="submit">Sign Up</button>
+      </form>
+      <img src="http://192.168.56.1:8003/static/images/SIGNUP.PNG" height="300" width="500" class="left shadow">
+      
+    </body>
+</html>
+{% endblock %}
+Next create a file called success

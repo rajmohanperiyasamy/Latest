@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- templatemo 413 flip turn -->
+<!-- 
+Flip Turn Template 
+http://www.templatemo.com/preview/templatemo_413_flip_turn
+-->
+<head>
+	<title>Article Turn for smart turn</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	<link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/magnific-popup.css" rel="stylesheet"> 
+	<link href="/static/css/templatemo_style.css" rel="stylesheet" type="text/css">
+	<link href="/static/css/signup-form.css" rel="stylesheet" type="text/css">	
+</head>
+<body>
+	<div class="main-container">
+	{% block head %}
+		<nav class="main-nav">
+			<div id="logo" class="left"><a href="/display-article/">Article Turn</a></div>
+			<ul class="nav right center-text">
+				<li class="btn"><a href="/display-article/">Articles</a></li>
+				<li class="btn"><a href="/home">Dashboard</a></li>	
+				<li class="btn"><a href="/register/">Sign-up</a></li>				
+				<li class="btn"><a href="/contacts">Contact</a></li>
+				<li class="btn"><a href="/signin" >Signin</a></li>
+			</ul>
+		</nav>
+		{% endblock %}
+		{% block content %}
+		{{ user.username }}
+		<div class="content-container">
+			<header>
+			<h1 class="center-text">Image Gallery</h1>
+			<h2 class="center-text">Snap Turn is a photo blog that highlights current events and lesser-known news stories through some awesome high-resolution pictures that are sourced from  Reuters Pictures, Getty Images, flickr, and others private photographers and videos in addition.</h2>
+		</header>
+		<div id="portfolio-content" class="center-text">
+			<div class="portfolio-page" id="page-1">
+				{%for img in snaps%}
+				<div class="portfolio-group">
+					<a class="portfolio-item" href="{{ img.image.url }}">
+						<img src="{{ img.image.url }}" alt="image 1">
+						<div class="detail">
+							<h3>{{ img.imgtitle }}</h3>
+							<p>{{ img.imgdesc }}</p>
+							<span class="btn">View</span>
+						</div>
+					</a>				
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>	<!-- /.content-container -->
+	{% endblock %}
+	
+	{% block footer %}	
+		<footer>
+			<p>Copyright &copy; 2084 Your Company Name</p>
+			<div class="social right">
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-google-plus"></i></a>
+				<a href="#"><i class="fa fa-dribbble"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+			</div>
+		</footer>
+		{% endblock %}
+		
+	</div>
+	<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="static/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="static/js/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="static/js/jquery.magnific-popup.min.js"></script> 
+	<script type="text/javascript" src="static/js/templatemo_script.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('.pagination li').click(changePage);
+			$('.portfolio-item').magnificPopup({ 
+				type: 'image',
+				gallery:{
+					enabled:true
+				}
+			});
+		});
+	</script>	
+</body>
+</html>

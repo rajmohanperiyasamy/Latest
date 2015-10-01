@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load imagekit %}
+
+{% block content %}
+<div>
+    <a href="{% url "profile_image_upload" %}">Upload Image</a>
+</div>
+<img src="{{ image.image.url }}" />
+<br />
+<img src="{{ image.thumbnail.url }}" />
+<br />
+<img src="{{ image.smart.url }}" />
+<br />
+
+{% endblock %}
